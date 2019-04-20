@@ -18,7 +18,7 @@ class OneSessionPerUsage:
             # print(request.user)
 
             current_session_key = request.user.logged_in_user.session_key
-            token= request.user.logged_in_user.token
+            token =request.META.get('HTTP_AUTHORIZATION')
 
 
             # avoid multiple session
